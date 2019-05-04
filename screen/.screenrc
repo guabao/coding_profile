@@ -1,0 +1,85 @@
+############################
+# screen config
+# grab from ed coakley
+############################
+
+multiuser on
+#shelltitle "sh"
+shelltitle "$|bash"
+startup_message off
+allpartial off
+autodetach on
+autonuke on
+bell_msg ""
+escape "^Gg"
+vbell off
+vbell_msg ""
+chdir
+#hardstatus string '%{= kG}[ %{G}%c:%s %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][ %{C} %{g}][%{kB} %d/%m %{w}%c %{g}]'
+hardstatus alwayslastline '%{= k.}%{G}%0`@%H:%1` %=%{W}%-Lw%{R}[{%{}Y%n*%f %t%{R}}]%{W}%+Lw%?%=%{G}%D %Y-%m-%d %0c:%s'
+backtick 0 90 90 sh -c 'whoami'
+backtick 1 90 90 sh -c 'screen -ls | grep --color=no -o "%PPID"'
+caption splitonly '%{= .r}%?%F%{R}>>> %{Y}%:%{W}=== %?%n %t %?%F%{R}<<<%:===%?======================================================================================================================================================================================================================================================================================================================================================='
+defc1 on
+defflow off
+defmonitor off
+defscrollback 9999
+zombie kr
+attrcolor b ".I"
+defbce "on"
+
+# mapping
+bindkey "^[\\" select
+bindkey "^[," prev
+bindkey "^[." next
+bindkey "^[;" split
+bindkey "^[|" split -v
+bindkey "^[/" only
+bindkey "^['" remove
+bindkey "^[`" focus
+
+bindkey "^[0" select 0
+bindkey "^[1" select 1
+bindkey "^[2" select 2
+bindkey "^[3" select 3
+bindkey "^[4" select 4
+bindkey "^[5" select 5
+bindkey "^[6" select 6
+bindkey "^[7" select 7
+bindkey "^[8" select 8
+bindkey "^[9" select 9
+
+bindkey "^[D" detach
+bindkey "^[K" kill
+bindkey "^[Q" quit
+bindkey "^[=" resize +1
+bindkey "^[-" resize -1
+bindkey "^[R" title
+bindkey "^[N" number
+bindkey "^[C" copy
+bindkey "^[V" paste .
+bindkey "^[Z" source .screenrc
+#bindkey "^[Z" exit
+
+#
+bindkey -t \sh screen -t sh $SHELL
+bindkey -t \htop screen -t htop htop -d5
+bindkey -t \py  screen -t py $SHELL -ic ipython
+
+
+
+
+
+
+
+
+
+
+
+term linux
+
+
+
+
+
+
