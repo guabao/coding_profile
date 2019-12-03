@@ -28,7 +28,7 @@ Plugin 'scrooloose/syntastic'
 "auto-completion stuff
 "Plugin 'klen/python-mode'
 "Plugin 'Valloric/YouCompleteMe'
-Plugin 'klen/rope-vim'
+"Plugin 'klen/rope-vim'
 "Plugin 'davidhalter/jedi-vim'
 Plugin 'ervandew/supertab'
 ""code folding
